@@ -30,7 +30,7 @@ void linear_menu() {
     void blank();
     void linear_menu();
     //기울기 a ( y=ax+b꼴)
-    int m, x1, x2, x3, x4, sel;
+    int a, b, c, x1, x2, x3, x4, sel;
     puts("두점의 좌표를 입력하세요.");
     blank();
     puts("첫번쨰 점");
@@ -55,9 +55,91 @@ void linear_menu() {
     scanf("%d", &sel);
     switch(sel) {
       case 1:
+      puts("표준형 |");
+      blank();
+      a=(y2-y1)/(x2-x1);
+      b=((x2*y1)-(x1*y2))/(x2-x1);
+      if(a!=1) {
+        if(b>0)
+              printf("y=%dx+%d\n", a, b);
+              else if(b==0)
+              printf("y=%dx\n", a);
+              else
+              printf("y=%dx%d\n", a, b);
+      }
+      else {
+                if(b>0)
+              printf("y=x+%d\n", b);
+              else if(b==0)
+              printf("y=x\n");
+              else
+              printf("y=x%d\n", b);
+      }
       break;
       case 2:
+      puts("일반형 |");
+      blank();
+      a=y2-y1;
+      b=x1-x2;
+      c=(x2*y1)-(x1*y2); 
+      if(a!=0 && b!=0) {
+      if(a!=1) {
+        if(b>1) {
+          if(c>0)
+          printf("%dx+%dy+%d=0\n", a, b, c);
+          else if(c==0);
+          printf("%dx+%dy=0\n", a, b);
+          else
+          printf("%dx+%dy%d=0\n", a, b, c);
+        }
+        else if(b==1) {
+          if(c>0)
+          printf("%dx+y+%d=0\n", a, c);
+          else if(c==0);
+          printf("%dx+y=0\n", a);
+          else
+          printf("%dx+y%d=0\n", a, c);       
+        }
+        else {
+          if(c>0)
+          printf("%dx%dy+%d=0\n", a, b, c);
+          else if(c==0);
+          printf("%dx%dy=0\n", a, b);
+          else
+          printf("%dx%dy%d=0\n", a, b, c);
+        }
+       }
+       if(a==1) {
+          if(b>1) {
+          if(c>0)
+          printf("%dx+%dy+%d=0\n", a, b, c);
+          else if(c==0);
+          printf("%dx+%dy=0\n", a, b);
+          else
+          printf("%dx+%dy%d=0\n", a, b, c);
+        }
+        else if(b==1) {
+          if(c>0)
+          printf("%dx+y+%d=0\n", a, c);
+          else if(c==0);
+          printf("%dx+y=0\n", a);
+          else
+          printf("%dx+y%d=0\n", a, c);       
+        }
+        else {
+          if(c>0)
+          printf("%dx%dy+%d=0\n", a, b, c);
+          else if(c==0);
+          printf("%dx%dy=0\n", a, b);
+          else
+          printf("%dx%dy%d=0\n", a, b, c);
+        }  
+       }
+      }
+      else
+      puts("일반형을 만들 가치가 없습니다.")
       break;
+      case 3:
     }
     linear_menu();
   }
