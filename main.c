@@ -8,13 +8,14 @@ int main()
 puts("Menu |");
 blank();
 puts("1. 일차함수");
-puts("0. 끝내기")
+puts("0. 끝내기");
 blank();
 puts("고르세요.");
 printf(" : ");
 scanf("%d", &t);
 switch(t) {
   case 1:
+  system("clear");
   linear_menu();
   break;
   case 0:
