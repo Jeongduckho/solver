@@ -1,7 +1,5 @@
 // this header is for linear function calculation
-void blank() {
-printf("\n");
-}
+void blank() { printf("\n"); }
 void linear_menu() {
 void make_with2point();
   int sel;
@@ -57,22 +55,28 @@ system("clear");
       puts("표준형 |");
       a=(y2-y1)/(x2-x1);
       b=((x2*y1)-(x1*y2))/(x2-x1);
-      if(a!=1) {
+if((x2-x1)*a==(y2-y1) || (x2-x1)*b==((x2*y1)-(x1*y2))) {
+      if(a!=1 && a!=0) {
         if(b>0)
               printf("y=%dx+%d\n", a, b);
               else if(b==0)
               printf("y=%dx\n", a);
               else
-              printf("y=%dx%d\n", a, b);
-      }
-      else {
+              printf("y=%dx%d\n", a, b); }
+      else if(a==0) {
+                if(b!=0)
+              printf("y=%d\n", b);
+                else
+              printf("y=0\n"); }
+      else if(a==1) {
                 if(b>0)
               printf("y=x+%d\n", b);
               else if(b==0)
               printf("y=x\n");
               else
-              printf("y=x%d\n", b);
-      }
+              printf("y=x%d\n", b); }
+      else { puts("민아누나는 원래 예쁨"); } }
+else { puts("흠..."); }
       break;
       case 2:
 system("clear");
@@ -81,23 +85,21 @@ system("clear");
       b=x1-x2;
       c=(x2*y1)-(x1*y2); 
       if(a!=0 && b!=0) {
-      if(a!=1) {
+      if(a>1) {
         if(b>1) {
           if(c>0)
           printf("%dx+%dy+%d=0\n", a, b, c);
           else if(c==0)
           printf("%dx+%dy=0\n", a, b);
           else
-          printf("%dx+%dy%d=0\n", a, b, c);
-        }
+          printf("%dx+%dy%d=0\n", a, b, c); }
         else if(b==1) {
           if(c>0)
           printf("%dx+y+%d=0\n", a, c);
           else if(c==0)
           printf("%dx+y=0\n", a);
           else
-          printf("%dx+y%d=0\n", a, c);       
-        }
+          printf("%dx+y%d=0\n", a, c); }
         else {
           if(c>0)
           printf("%dx%dy+%d=0\n", a, b, c);
@@ -105,25 +107,22 @@ system("clear");
           printf("%dx%dy=0\n", a, b);
           else
           printf("%dx%dy%d=0\n", a, b, c);
-        }
-       }
-       if(a==1) {
+        } }
+       else if(a==1) {
           if(b>1) {
           if(c>0)
           printf("%dx+%dy+%d=0\n", a, b, c);
           else if(c==0)
           printf("%dx+%dy=0\n", a, b);
           else
-          printf("%dx+%dy%d=0\n", a, b, c);
-        }
+          printf("%dx+%dy%d=0\n", a, b, c); }
         else if(b==1) {
           if(c>0)
           printf("%dx+y+%d=0\n", a, c);
           else if(c==0)
           printf("%dx+y=0\n", a);
           else
-          printf("%dx+y%d=0\n", a, c);       
-        }
+          printf("%dx+y%d=0\n", a, c); }
         else {
           if(c>0)
           printf("%dx%dy+%d=0\n", a, b, c);
@@ -131,54 +130,87 @@ system("clear");
           printf("%dx%dy=0\n", a, b);
           else
           printf("%dx%dy%d=0\n", a, b, c);
-        }  
-       }
-      }
+        } } 
+          else {
+        if(b>1) {
+          if(c>0)
+          printf("%dx%dy%d=0\n", -a, -b, -c);
+          else if(c==0)
+          printf("%dx%dy=0\n", -a, -b);
+          else
+          printf("%dx%dy+%d=0\n", -a, -b, -c); }
+        else if(b==1) {
+          if(c>0)
+          printf("%dx-y%d=0\n", -a, -c);
+          else if(c==0)
+          printf("%dx-y=0\n", -a);
+          else
+          printf("%dx-y+%d=0\n", -a, -c); }
+        else {
+          if(c>0)
+          printf("%dx+%dy%d=0\n", -a, -b, -c);
+          else if(c==0)
+          printf("%dx+%dy=0\n", -a, -b);
+          else
+          printf("%dx+%dy+%d=0\n", -a, -b, -c);
+        } } }
       else
-      puts("일반형을 만들 가치가 없습니다.");
+      puts("일반형을 만들 가치가 없습니다."); 
       break;
       case 3:
 system("clear");
       puts("표준형 |");
       a=(y2-y1)/(x2-x1);
       b=((x2*y1)-(x1*y2))/(x2-x1);
-      if(a!=1) {
+if((x2-x1)*a==(y2-y1) || (x2-x1)*b==((x2*y1)-(x1*y2))) {
+      if(a!=1 && a!=0 && a !=-1) {
         if(b>0)
               printf("y=%dx+%d\n", a, b);
               else if(b==0)
               printf("y=%dx\n", a);
               else
-              printf("y=%dx%d\n", a, b);
-      }
-      else {
+              printf("y=%dx%d\n", a, b); }
+      else if(a==0) {
+                if(b!=0)
+              printf("y=%d\n", b);
+                else
+              printf("y=0\n"); }
+      else if(a==1) {
                 if(b>0)
               printf("y=x+%d\n", b);
               else if(b==0)
               printf("y=x\n");
               else
               printf("y=x%d\n", b); }
-              puts("일반형 |");
+      else if(a==-1) {
+                if(b>0)
+              printf("y=-x+%d\n", b);
+              else if(b==0)
+              printf("y=-x\n");
+              else
+              printf("y=-x%d\n", b); }
+      else { puts("민아누나는 원래 예쁨"); } }
+else { puts("흠..."); }
+      puts("일반형 |");
       a=y2-y1;
       b=x1-x2;
       c=(x2*y1)-(x1*y2); 
       if(a!=0 && b!=0) {
-      if(a!=1) {
+      if(a>1) {
         if(b>1) {
           if(c>0)
           printf("%dx+%dy+%d=0\n", a, b, c);
           else if(c==0)
           printf("%dx+%dy=0\n", a, b);
           else
-          printf("%dx+%dy%d=0\n", a, b, c);
-        }
+          printf("%dx+%dy%d=0\n", a, b, c); }
         else if(b==1) {
           if(c>0)
           printf("%dx+y+%d=0\n", a, c);
           else if(c==0)
           printf("%dx+y=0\n", a);
           else
-          printf("%dx+y%d=0\n", a, c);       
-        }
+          printf("%dx+y%d=0\n", a, c); }
         else {
           if(c>0)
           printf("%dx%dy+%d=0\n", a, b, c);
@@ -186,25 +218,22 @@ system("clear");
           printf("%dx%dy=0\n", a, b);
           else
           printf("%dx%dy%d=0\n", a, b, c);
-        }
-       }
-       if(a==1) {
+        } }
+       else if(a==1) {
           if(b>1) {
           if(c>0)
           printf("%dx+%dy+%d=0\n", a, b, c);
           else if(c==0)
           printf("%dx+%dy=0\n", a, b);
           else
-          printf("%dx+%dy%d=0\n", a, b, c);
-        }
+          printf("%dx+%dy%d=0\n", a, b, c); }
         else if(b==1) {
           if(c>0)
           printf("%dx+y+%d=0\n", a, c);
           else if(c==0)
           printf("%dx+y=0\n", a);
           else
-          printf("%dx+y%d=0\n", a, c);       
-        }
+          printf("%dx+y%d=0\n", a, c); }
         else {
           if(c>0)
           printf("%dx%dy+%d=0\n", a, b, c);
@@ -212,13 +241,32 @@ system("clear");
           printf("%dx%dy=0\n", a, b);
           else
           printf("%dx%dy%d=0\n", a, b, c);
-        }  
-       }
-      }
+        } } 
+          else {
+        if(b>1) {
+          if(c>0)
+          printf("%dx%dy%d=0\n", -a, -b, -c);
+          else if(c==0)
+          printf("%dx%dy=0\n", -a, -b);
+          else
+          printf("%dx%dy+%d=0\n", -a, -b, -c); }
+        else if(b==1) {
+          if(c>0)
+          printf("%dx-y%d=0\n", -a, -c);
+          else if(c==0)
+          printf("%dx-y=0\n", -a);
+          else
+          printf("%dx-y+%d=0\n", -a, -c); }
+        else {
+          if(c>0)
+          printf("%dx+%dy%d=0\n", -a, -b, -c);
+          else if(c==0)
+          printf("%dx+%dy=0\n", -a, -b);
+          else
+          printf("%dx+%dy+%d=0\n", -a, -b, -c);
+        } } }
       else
-      puts("일반형을 만들 가치가 없습니다.");
-      break;
-    }
+      puts("일반형을 만들 가치가 없습니다."); 
+      break; }
       blank();
-    linear_menu();
-  }
+    linear_menu(); }

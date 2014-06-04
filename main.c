@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "linear_f.h"
-int main() 
-{
+int main() {
   void blank();
   int t;
 puts("Menu |");
@@ -20,7 +19,5 @@ switch(t) {
   break;
   case 0:
   system("exit");
-  break;
-}
-return 0; 
-}
+  break; }
+return 0; }
