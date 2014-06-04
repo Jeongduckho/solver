@@ -140,6 +140,87 @@ void linear_menu() {
       puts("일반형을 만들 가치가 없습니다.")
       break;
       case 3:
+      puts("표준형 |");
+      blank();
+      a=(y2-y1)/(x2-x1);
+      b=((x2*y1)-(x1*y2))/(x2-x1);
+      if(a!=1) {
+        if(b>0)
+              printf("y=%dx+%d\n", a, b);
+              else if(b==0)
+              printf("y=%dx\n", a);
+              else
+              printf("y=%dx%d\n", a, b);
+      }
+      else {
+                if(b>0)
+              printf("y=x+%d\n", b);
+              else if(b==0)
+              printf("y=x\n");
+              else
+              printf("y=x%d\n", b); }
+              puts("일반형 |");
+      blank();
+      a=y2-y1;
+      b=x1-x2;
+      c=(x2*y1)-(x1*y2); 
+      if(a!=0 && b!=0) {
+      if(a!=1) {
+        if(b>1) {
+          if(c>0)
+          printf("%dx+%dy+%d=0\n", a, b, c);
+          else if(c==0);
+          printf("%dx+%dy=0\n", a, b);
+          else
+          printf("%dx+%dy%d=0\n", a, b, c);
+        }
+        else if(b==1) {
+          if(c>0)
+          printf("%dx+y+%d=0\n", a, c);
+          else if(c==0);
+          printf("%dx+y=0\n", a);
+          else
+          printf("%dx+y%d=0\n", a, c);       
+        }
+        else {
+          if(c>0)
+          printf("%dx%dy+%d=0\n", a, b, c);
+          else if(c==0);
+          printf("%dx%dy=0\n", a, b);
+          else
+          printf("%dx%dy%d=0\n", a, b, c);
+        }
+       }
+       if(a==1) {
+          if(b>1) {
+          if(c>0)
+          printf("%dx+%dy+%d=0\n", a, b, c);
+          else if(c==0);
+          printf("%dx+%dy=0\n", a, b);
+          else
+          printf("%dx+%dy%d=0\n", a, b, c);
+        }
+        else if(b==1) {
+          if(c>0)
+          printf("%dx+y+%d=0\n", a, c);
+          else if(c==0);
+          printf("%dx+y=0\n", a);
+          else
+          printf("%dx+y%d=0\n", a, c);       
+        }
+        else {
+          if(c>0)
+          printf("%dx%dy+%d=0\n", a, b, c);
+          else if(c==0);
+          printf("%dx%dy=0\n", a, b);
+          else
+          printf("%dx%dy%d=0\n", a, b, c);
+        }  
+       }
+      }
+      else
+      puts("일반형을 만들 가치가 없습니다.")
+      break;
     }
     linear_menu();
   }
