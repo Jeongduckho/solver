@@ -23,6 +23,3 @@ switch(t) {
 }
 return 0; 
 }
-void blank() {
-  printf("\n");
-}
