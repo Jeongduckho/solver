@@ -7,6 +7,7 @@ int main() {
 	puts("Menu |");
 	blank();
 	puts("1. 일차함수");
+        puts("2. 이차함수");
 	puts("0. 끝내기");
 	blank();
 	puts("고르세요.");

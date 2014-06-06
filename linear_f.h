@@ -4,11 +4,19 @@ void blank() {
 }
 void linear_menu() {
 	void make_with2point();
+	void make_with_G_1point();
 	int sel;
 	puts("Select |");
 	blank();
 	puts("1. 두 점의 좌표로 함수만들기.");
 	puts("2. 기울기와 한점의 좌표로 함수만들기.");
+        puts("3. x절편과 y절편으로 함수만들기.");
+        puts("4. 두 함수의 교점 구하기");
+        puts("5. 함수 세개로 삼각형 만들고 원하는 값 구하기");
+        puts("6. 함수 네개로 사각형 만들고 원하는 값 구하기");
+        puts("7. x축으로 n만큼 이동한 함수 구하기");
+        puts("8. y축으로 n만큼 이동한 함수 구하기");
+        puts("9. x축으로 n만큼 이동하고 y축으로 m만큼 이동한 함수 구하기");
 	puts("0. 돌아가기");
 	blank();
 	puts("고르세요.");
@@ -20,7 +28,7 @@ void linear_menu() {
 			make_with2point();
 			break;
 		case 2:
-			// make_with_G_1point();
+			make_with_G_1point();
 			break;
 		case 0:
 			system("clear");
@@ -206,6 +214,81 @@ void make_with2point() {
 		} else {
 			puts("일반형을 만들 가치가 없습니다.");
 		}
+	}
+	blank();
+	linear_menu();
+}
+void make_with_G_1point() {
+	void p(int m /* 기울기 */ , int x1, int y1) {
+		puts("표준형 |");
+		// y=mx+k
+		int k = (y1 - (m * x1));
+		if (k > 0) {
+			printf("y=%dx+%d\n", m, k);
+		} else if (k == 0) {
+			printf("y=%dx\n", m);
+		} else {
+			printf("y=%dx%d\n", m, k);
+		}
+	}
+	void n(int m /* 기울기 */ , int x1, int y1) {
+		puts("일반형 |");
+		if (m == 0) {
+			puts("일반형을 만들 가치가 없습니다.");
+		} else {
+			// use mx-y+k=0
+			int k = (y1 - (m * x1));
+			if (m > 0) {
+				if (k > 0) {
+					printf("%dx-y+%d=0\n", m, k);
+				} else if (k == 0) {
+					printf("%dx-y=0\n", m);
+				} else {
+					printf("%dx-y%d\n", m, k);
+				}
+			} else {
+				m = -m;
+				k = -k;
+				if (k > 0) {
+					printf("%dx+y%d=0\n", m, k);
+				} else if (k == 0) {
+					printf("%dx+y=0\n", m);
+				} else {
+					printf("%dx+y+%d\n", m, k);
+				}
+
+			}
+		}
+	}
+	int m, x1, y1, sel;
+	puts("기울기를 입력하세요.");
+	scanf("%d", & m);
+	blank();
+	puts("한점의 좌표를 입력하세요.");
+	puts("1,2 이런식으로 입력하시면 됩니다.");
+	blank();
+	printf("(x,y): ");
+	scanf("%d,%d", & x1, & y1);
+	blank();
+	puts("무엇을 출력할까요? |");
+	blank();
+	puts("1. 표준형(y=ax+b)");
+	puts("2. 일반형(ax+by+c=0)");
+	puts("3. 둘다");
+	blank();
+	printf(": ");
+	scanf("%d", & sel);
+	switch (sel) {
+		case 1:
+			p(m, x1, y1);
+			break;
+		case 2:
+			n(m, x1, y1);
+			break;
+		case 3:
+			p(m, x1, y1);
+			n(m, x1, y1);
+			break;
 	}
 	blank();
 	linear_menu();
