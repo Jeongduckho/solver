@@ -30,6 +30,9 @@ void linear_menu() {
 		case 2:
 			make_with_G_1point();
 			break;
+		case 3: 
+		        make_with_onlyX_onlyY();
+		        break;
 		case 0:
 			system("clear");
 			main();
@@ -219,7 +222,7 @@ void make_with2point() {
 	linear_menu();
 }
 void make_with_G_1point() {
-	void p(int m /* 기울기 */ , int x1, int y1) {
+	void p/*표준형*/(int m /* 기울기 */ , int x1, int y1) {
 		puts("표준형 |");
 		// y=mx+k
 		int k = (y1 - (m * x1));
@@ -231,7 +234,7 @@ void make_with_G_1point() {
 			printf("y=%dx%d\n", m, k);
 		}
 	}
-	void n(int m /* 기울기 */ , int x1, int y1) {
+	void n/*일반형*/(int m /* 기울기 */ , int x1, int y1) {
 		puts("일반형 |");
 		if (m == 0) {
 			puts("일반형을 만들 가치가 없습니다.");
@@ -292,4 +295,11 @@ void make_with_G_1point() {
 	}
 	blank();
 	linear_menu();
+}
+void make_with_onlyX_onlyY() {
+	void p() { }
+	void n() { }
+	int onlyX, onlyY, a, b;
+	puts("x절편과 y절편을  입력하세요.");
+	
 }
