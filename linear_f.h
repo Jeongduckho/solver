@@ -296,14 +296,20 @@ void make_with_G_1point() {
 }
 void make_with_onlyX_onlyY() {
 	void p(int onlyX, int onlyY) {
+		if(onlyY>0) {
 		m=-onlyY/onlyX;
-		printf("y=%dx+%d", m, onlyY);
+                        if(m*m=1) {
+			if(m==1) { printf("y=x+%d", onlyY); }
+			if(m===-1) { printf("y=x+%d", onlyY); }
+					printf("y=%dx+%d", m, onlyY);
 		}
+		}
+	}
 	void n(int onlyX, int onlyY) {
 		
 		}
 	int onlyX, onlyY, a, b;
-	puts("x절편과 y절편을  입력하세요.");
+	puts("x절편과 y절편을  입력하세요.(0안됨)");
 	puts("(n,n) 이런식으로 입력하세요.");
         printf(": ");
         scanf("%d,%d", &onlyX, &onlyY);
