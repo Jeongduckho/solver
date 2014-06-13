@@ -299,7 +299,7 @@ void make_with_G_1point() {
 void make_with_onlyX_onlyY() {
 	void p(int onlyX, int onlyY) {
 		m=-onlyY/onlyX;
-		printf("y=%dx+")
+		printf("y=%dx+%d", m, onlyY);
 		}
 	void n(int onlyX, int onlyY) {
 		
