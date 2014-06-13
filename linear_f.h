@@ -1,7 +1,5 @@
 // this header is for linear function calculation
-void blank() {
-	printf("\n");
-}
+void blank() { printf("\n"); }
 void linear_menu() {
 	void make_with2point();
 	void make_with_G_1point();
