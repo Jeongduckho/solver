@@ -297,9 +297,37 @@ void make_with_G_1point() {
 	linear_menu();
 }
 void make_with_onlyX_onlyY() {
-	void p() { }
-	void n() { }
+	void p(int onlyX, int onlyY) {
+		m=-onlyY/onlyX;
+		printf("y=%dx+")
+		}
+	void n(int onlyX, int onlyY) {
+		
+		}
 	int onlyX, onlyY, a, b;
 	puts("x절편과 y절편을  입력하세요.");
-	
+	puts("(n,n) 이런식으로 입력하세요.");
+        printf(": ");
+        scanf("%d,%d", &onlyX, &onlyY);
+        blank();
+        puts("무엇을 출력할까요? |");
+	blank();
+	puts("1. 표준형(y=ax+b)");
+	puts("2. 일반형(ax+by+c=0)");
+	puts("3. 둘다");
+	blank();
+	printf(": ");
+	scanf("%d", & sel);
+	switch(sel) {
+		case 1:
+		p(onlyX, onlyY);
+		break;
+		case 2:
+		n(onlyX, onlyY);
+		break;
+		case 3:
+		p(onlyX, onlyY);
+		n(onlyX, onlyY);
+		break;
+	}
 }
